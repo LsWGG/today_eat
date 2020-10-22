@@ -4,10 +4,32 @@ const app = getApp()
 Page({
   data: {
     avatarUrl: './user-unlogin.png',
-    userInfo: {},
-    logged: false,
-    takeSession: false,
-    requestResult: ''
+    hiddenmodalput: true,
+    eat_name: '🍔',
+    openid: '',
+    menu: ''
+  },
+  modalinput: function () {
+    this.setData({
+      hiddenmodalput: !this.data.hiddenmodalput
+    })
+  },
+  //取消
+  cancel: function() {
+    this.setData({
+      hiddenmodalput: true
+    })
+  },
+  //确认，保存到数据库
+  bindinput: function(e){
+    _this.setData({
+      menu:e.detail.avatarUrl
+    })
+  },
+  confirm: function(){
+    this.setData({
+      hiddenmodalput: true,
+    })
   },
 
   onLoad: function() {

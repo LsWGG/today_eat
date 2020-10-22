@@ -1,35 +1,24 @@
 <!--index.wxml-->
 <view class="container">
-
-  <!-- 用户 openid -->
-  <view class="userinfo">
-    <button 
-      open-type="getUserInfo" 
-      bindgetuserinfo="onGetUserInfo"
-      class="userinfo-avatar"
-      style="background-image: url({{avatarUrl}})"
-      size="default"
-    ></button>
+  <view class="head-div">
+    <!-- 用户 头像 -->
+    <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo-avatar"
+      style="background-image: url({{avatarUrl}})" size="default"></button>
   </view>
-
-<!-- button1 -->
-  <view class="uploader">
-    <navigator url="../openapi/openapi" open-type="navigate" class="uploader-text">
-      <button
-       class="eat-button"
-      >biu~~</button>
-    </navigator>
+  <view class="eat-div">
+    <!-- 菜名 -->
+    <text class="eat-name">今天吃{{eat_name}}</text>
   </view>
-
-<!-- button2 -->
-<view class="uploader">
-    <navigator url="../openapi/openapi" open-type="navigate" class="uploader-text">
-      <button
-       class="eat-button"
-      >点击输入菜单</button>
-    </navigator>
+  <view class="btn-div">
+    <!-- button1 -->
+    <button class="btn" bindtap="modalinput">点击输入菜单</button>
+    <modal hidden="{{hiddenmodalput}}" title="想吃什么？" confirm-text="提交" cancel-text="取消" bindcancel="cancel"
+      bindconfirm="confirm">
+      <textarea placeholder="请输入内容"></textarea>
+    </modal>
+    <!-- button2 -->
+    <button class="btn" bindtap="biu">biu~~</button>
   </view>
-
   <!-- 上传图片 -->
   <!-- <view class="uploader">
     <view class="uploader-text" bindtap="doUpload">
@@ -42,11 +31,11 @@
 
 
   <!-- 操作数据库 -->
-  <!-- <view class="uploader">
+  <view class="uploader">
     <navigator url="../databaseGuide/databaseGuide" open-type="navigate" class="uploader-text">
       <text>前端操作数据库</text>
     </navigator>
-  </view> -->
+  </view>
 
   <!-- 即时通信 -->
   <!-- <view class="uploader">
@@ -68,6 +57,5 @@
       <text>云调用</text>
     </navigator>
   </view> -->
-
 
 </view>

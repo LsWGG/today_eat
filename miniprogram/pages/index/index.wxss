@@ -25,12 +25,6 @@ page {
   padding-left: 120rpx;
 }
 
-.eat-button {
-  color: #ff8080;
-  width: 500rpx;
-  height: 100rpx;
-}
-
 .userinfo-avatar {
   width: 100rpx;
   height: 100rpx;
@@ -79,7 +73,7 @@ page {
   width: 100%;
   line-height: 52px;
   font-size: 34rpx;
-  color: #007aff;
+  color: #000000;
 }
 
 .uploader-container {
@@ -156,4 +150,24 @@ page {
   font-size: 24rpx;
   line-height: 36rpx;
   word-break: break-all;
+}
+
+.btn {
+  width: 65%;
+  margin-top: 20rpx;
+  background-color: #ff8080 ;
+  color: white;
+  border-radius: 98rpx; 
+}
+.btn::after {
+  border-radius: 98rpx;
+}
+.btn-div{
+  margin: 60px auto;
+}
+.eat-div {
+  margin-top: 30px;
+}
+.head-div {
+  margin: 20px auto 10px;
 }
